@@ -1,0 +1,80 @@
+<!-- <ion-content [fullscreen]="true" [scrollEvents]="true" (ionScroll)="onScroll($event)">
+    <app-header [ngClass]="headerClass ? 'header-sticky':''"></app-header> -->
+
+    <!-- SIGNIN MODEL START -->
+    <div class="container">
+        <!-- <div class="modal-dialogs"> -->
+            <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+            <!-- <div class="modal-contents"> -->
+            <div class="user-box">
+                <h2>Sign In</h2>
+                <!--FORM FIELD START-->
+                <form #login="ngForm" (ngSubmit)="submitLogin(login)">
+
+                    <div class="fieldrow">
+                        <ion-radio-group [allowEmptySelection]="true" [(ngModel)]="userType" name="userType" #un="ngModel">
+                          <ul class="form_radio"  style="display: flex; gap: 15px; text-align: center; justify-content: center;">
+                            <li><ion-radio  value="admin"></ion-radio>Admin</li>
+                            <li><ion-radio  value="user"></ion-radio>User</li>
+                          </ul>
+                        </ion-radio-group>
+                        <span class="input_err " *ngIf="un.errors && (un.dirty || un.touched || login.submitted)">This filed
+                          is required</span>
+                      </div>
+
+
+                <div class="form">
+                    <div class="input-container">
+                        <input type="text" placeholder="E-mail"  name="email" [(ngModel)]="email" #cEmail="ngModel"
+                        pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" required autocomplete="off">
+                        <span class="input_err"
+                *ngIf="cEmail.errors && (cEmail.dirty || cEmail.touched || login.submitted)">
+                Please Enter Email</span>
+                        <i class="fa fa-envelope-o"></i>
+                    </div>
+                    <div class="input-container">
+                        <input type="password" placeholder="Password" name="password" [(ngModel)]="password" #cpass="ngModel" required autocomplete="off">
+                        <span class="input_err"
+                        *ngIf="cpass.errors && (cpass.dirty || cpass.touched || login.submitted)">
+                        Please Enter Password</span>
+                        <i class="fa fa-unlock"></i>
+                    </div>
+                    <div class="input-container">
+                        <label>
+                            <span class="radio">
+                                <input type="checkbox" name="foo" value="1" checked>
+                                <span class="radio-value" aria-hidden="true"></span>
+                            </span>
+                            <span>Remember me</span>
+                        </label>
+                    </div>
+                    <div class="input-container">
+                        <button class="btn-style">Sign In</button>
+                    </div>
+                </div>
+                </form>
+                <!--FORM FIELD END-->
+                <!--OPTION START-->
+                <div class="option">
+                    <h5>Or Using</h5>
+                </div>
+                <!--OPTION END-->
+                <!--OPTION START-->
+                <div class="social-login">
+                    <a href="#" class="google"><i class="fa fa-google-plus"></i>Google Account</a>
+                    <a href="#" class="facebook"><i class="fa fa-facebook"></i>Facebook Account</a>
+                </div>
+                <!--OPTION END-->
+
+            </div>
+            <div class="user-box-footer">
+                <p>Don't have an account?<br><a [routerLink]="'/register'">Sign up as a User</a></p>
+            </div>
+            <div class="clearfix"></div>
+        <!-- </div> -->
+        <div class="clearfix"></div>
+        <!-- </div> -->
+    </div>
+    <!-- SIGNIN MODEL END -->
+
+<!-- </ion-content> -->

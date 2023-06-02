@@ -1,0 +1,7 @@
+{
+  "name": "canAmerican",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,202 @@
+ion-content {
+    --background: var(--black);
+}
+
+.menu_content {
+    .menu_head {
+        padding: 15px;
+        text-align: right;
+
+        .close_menu {
+            width: 30px;
+            height: 30px;
+            background-color: var(--red);
+            font-size: 22px;
+            line-height: 25px;
+            cursor: pointer;
+
+            i {
+                vertical-align: middle;
+            }
+        }
+
+        .prof_info {
+            margin: 0px -5px;
+            margin-top: 10px;
+
+            figure {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                overflow: hidden;
+                border: solid 3px var(--white);
+                display: inline-block;
+                vertical-align: middle;
+                margin: 0;
+                margin-right: 10px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+
+            h3 {
+                font-size: 15px;
+                font-weight: 500;
+                color: var(--white);
+                margin: 0;
+                text-align: left;
+                display: inline-block;
+                vertical-align: middle;
+                width: calc(100% - 70px);
+
+                span {
+                    display: block;
+                    font-size: 18px;
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+
+    .menu_inner {
+        .mobile_menu {
+            padding-inline-start: 0;
+            margin: 0;
+            margin-bottom: 20px;
+
+            li {
+                display: block;
+
+                a {
+                    display: block;
+                    padding: 12px 15px;
+                    color: #ddd;
+                    background-color: transparent;
+                    font-size: 15px;
+                    font-weight: normal;
+                    position: relative;
+                    box-shadow: none;
+
+                    &:hover {
+                        color: var(--white);
+                    }
+
+                    &.accordion-button {
+                        &:after {
+                            content: "\EA6E";
+                            font-family: remixicon !important;
+                            position: absolute;
+                            top: 13px;
+                            right: 13px;
+                            font-size: 20px;
+                            line-height: 20px;
+                            transition: all 250ms ease-in-out;
+                            background: none;
+                            transform: none;
+                        }
+
+                        &[aria-expanded="true"]:after {
+                            transform: rotate(90deg);
+                        }
+                    }
+
+                    .collapse {
+                        li {
+                            a {
+                              //  font-weight: 300;
+                                color: brown;
+                            }
+                        }
+                    }
+                }
+
+                ul {
+                    padding-inline-start: 0;
+                    margin: 0;
+
+                    li {
+                        a {
+                            padding: 10px 25px;
+                            padding-right: 15px;
+                            font-size: 14px;
+
+                            &.has_submenu {
+                                position: relative;
+
+                                &::after {
+                                    content: "\ea6e";
+                                    font-family: remixicon !important;
+                                    position: absolute;
+                                    top: 13px;
+                                    right: 13px;
+                                    font-size: 20px;
+                                    line-height: 20px;
+                                    background: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .menu_bottom {
+        padding-inline-start: 0;
+        margin: 0;
+        margin-top: 30px;
+
+        li {
+            display: block;
+
+            a {
+                display: block;
+                padding: 12px 20px;
+                border-radius: 5px;
+                margin: 0;
+                text-align: center;
+                width: 70%;
+                margin-left: auto;
+                margin-right: auto;
+                border: 0;
+                background: linear-gradient(90deg, rgb(45, 73, 189) 0%, rgb(222, 32, 69) 100%);
+                color: var(--white);
+                font-size: 15px;
+                font-weight: normal;
+                font-family: "Futura PT";
+                text-transform: uppercase;
+                position: relative;
+                transition: all 250ms ease-in-out;
+
+                span {
+                    position: relative;
+                    z-index: 2;
+                }
+
+                &::after {
+                    position: absolute;
+                    content: "";
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(90deg, rgb(222, 32, 69) 0%, rgb(45, 73, 189) 100%);
+                    transition: opacity 0.5s ease-out;
+                    opacity: 0;
+                    z-index: 1;
+                    border-radius: 5px;
+                }
+
+                &:hover {
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}

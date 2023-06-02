@@ -1,0 +1,65 @@
+<ion-app>
+  <ion-menu contentId="main-content" type="overlay" side="end">
+    <ion-content>
+      <div class="menu_content">
+        <div class="menu_head">
+          <ion-menu-toggle>
+            <button class="close_menu">
+              <i class="ri-close-line"></i>
+            </button>
+          </ion-menu-toggle>
+          <div class="prof_info">
+            <figure>
+              <img src="assets/img/hero/hero-shape-10.png" alt="">
+            </figure>
+            <h3 class="prof_name">Hi,<span>Biswajit</span></h3>
+          </div>
+        </div>
+        <div class="menu_inner">
+          <ul class="mobile_menu" id="accordion">
+            <li>
+              <ion-menu-toggle>
+                <a [routerLink]="'/'">Home</a>
+              </ion-menu-toggle>
+            </li>
+            <li>
+              <a class="accordion-button" id="menu-two" data-toggle="collapse" data-target="#menu_two"
+                aria-expanded="false" aria-controls="menu_two">About</a>
+              <ion-menu-toggle>
+                <ul id="menu_two" aria-labelledby="menu-two" data-parent="#accordion">
+                <li><a [routerLink]="'/team'">Team</a></li>
+                <li><a [routerLink]="'/services'">Services</a></li>
+                <li><a [routerLink]="'/testimonials'">Testimonials</a></li>
+                <li><a [routerLink]="'/terms-conditions'">Terms-Conditions</a></li>
+                <li><a [routerLink]="'/blog'">Blog</a></li>
+                <li><a [routerLink]="'/privacy-policy'">Privacy Policy</a></li>
+              </ul>
+            </ion-menu-toggle>
+            </li>
+
+
+
+            <li>
+              <ion-menu-toggle>
+              <a [routerLink]="'/contact-us'">Contact-Us</a>
+              </ion-menu-toggle>
+            </li>
+            <li>
+              <ion-menu-toggle>
+              <a [routerLink]="'/faq'">FAQ</a>
+              </ion-menu-toggle>
+            </li>
+            <li>
+              <ion-menu-toggle>
+              <a [routerLink]="'/about-us'">About-Us</a>
+              </ion-menu-toggle>
+            </li>
+            
+           
+          </ul>
+        </div>
+      </div>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+</ion-app>
