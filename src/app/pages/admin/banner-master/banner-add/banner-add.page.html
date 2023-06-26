@@ -1,0 +1,92 @@
+
+
+<ion-content>
+  <div class="mi_modal">
+    <div class="modal_header">
+      <h4>Add Banner</h4>
+        <i class="ri-close-line"></i>
+      <!-- </button> -->
+    </div>
+    <form #banner="ngForm" (ngSubmit)="submitBanner(banner)">
+      <div>
+        <div class="modal_body">
+          <ion-row>
+            <ion-col size="12">
+              <div class="fieldrow">
+                <label class="form_label">Banner Title</label>
+                <input class="form_input" type="text" name="bannerTitle" [(ngModel)]="bannerTitle" #bnrt="ngModel" required>
+                <span class="input_err" *ngIf="bnrt.errors && (bnrt.dirty || bnrt.touched || banner.submitted)">
+                  This field is required.</span>
+              </div>
+            </ion-col>
+            <ion-col size="12">
+              <div class="fieldrow">
+                <label class="form_label">Banner Heading</label>
+                <textarea class="form_input" name="bannerHeading" [(ngModel)]="bannerHeading" #bnrh="ngModel" required></textarea>
+                <span class="input_err" *ngIf="bnrh.errors && (bnrh.dirty || bnrh.touched || banner.submitted)">
+                  This field is required.</span>
+              </div>
+            </ion-col>
+            <ion-col size="12">
+              <div class="fieldrow">
+                <label class="form_label">Banner Small Description</label>
+                <textarea class="form_input" name="bannerSmallDesc" [(ngModel)]="bannerSmallDesc" #bnrsmd="ngModel" required></textarea>
+                <span class="input_err" *ngIf="bnrsmd.errors && (bnrsmd.dirty || bnrsmd.touched || banner.submitted)">
+                  This field is required.</span>
+              </div>
+            </ion-col>
+            <ion-col size="12">
+              <div class="fieldrow">
+                <label class="form_label">Banner Long Description</label>
+                <textarea class="form_input" name="bannerLngDesc" [(ngModel)]="bannerLngDesc" #bnrld="ngModel" required></textarea>
+                <span class="input_err" *ngIf="bnrld.errors && (bnrld.dirty || bnrld.touched || banner.submitted)">
+                  This field is required.</span>
+              </div>
+            </ion-col>
+            <ion-col size="12">
+              <div class="fieldrow">
+                <label class="form_label">Status</label>
+                <ion-select interface="action-sheet" placeholder="Select fruit" name="status" [(ngModel)]="status">
+                  <ion-select-option value="yes">Active</ion-select-option>
+                  <ion-select-option value="No">Inactive</ion-select-option>
+                </ion-select>
+              </div>
+            </ion-col>
+            <ion-col size-lg="12" size-md="12" size-sm="12" size-xs="12">
+              <div class="fieldrow">
+                <label class="form_label">Profile Image</label>
+                <div class="up_img">
+                  <ul>
+                    <li class="up_input">
+                      <input type="file" required accept="image/jpg,image/jpeg,image/png"
+                        (change)="yourImage($event.target,'image')" />
+                      <ion-icon class="up_button" name="cloud-upload-outline"></ion-icon>
+                    </li>
+                    <li *ngIf="imageName">
+                      <img src="{{imageName}}" alt="">
+                      <button class="btn_delete">
+                        <ion-icon name="close" (click)="clearInvoiceImage()"></ion-icon>
+                      </button>
+                    </li>
+                    <!-- <li *ngIf="userImage && !imageName">
+                      <img src="{{userImage}}" alt="">
+                      <button class="btn_delete">
+                        <ion-icon name="close" (click)="clearInvoiceImage()"></ion-icon>
+                      </button>
+                    </li> -->
+                  </ul>
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+
+          <div class="modal_footer">
+            <button class="btn_submit">{{title}}</button>
+          </div>
+        </div>
+      </div>
+
+      
+    </form>
+  </div>
+</ion-content>

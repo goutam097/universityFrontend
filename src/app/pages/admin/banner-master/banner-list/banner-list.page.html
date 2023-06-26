@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>banner-list</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div class="container">
+  <div class="heading"  style="margin-top:  20px; margin-bottom: 30px ;">
+    <div class="row" style="display: flex;
+    justify-content: space-between;">
+      <h3>Banner Section</h3>
+      <button [routerLink]="'/banner-add'">Add</button>
+    </div>
+  </div>
+</div>
+ 
+
+  <div class="container">
+    <div class="row">
+      <table >
+        <tr style="background-color: grey; padding-left: 50px; gap: 10px;">
+          <th>#</th>
+          <th>Title</th>
+          <th>Heading</th>
+          <th>Description</th>
+          <th>Image</th>
+          <th>Action</th>
+        </tr>
+        <tr *ngFor="let b of bannerList; let i = index">
+          <td>{{i+1}}</td>
+          <td>{{b?.title}}</td>
+          <td>{{b?.heading}}</td>
+          <td>{{b?.small_description}}</td>
+          <td><img src="{{b?.image}}" alt="" style="width:80px"></td>
+          <td><a href="">Edit</a></td>
+          <td><a (click)="deleteBanner(b?.id, i)">Delete</a></td>
+
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</ion-content>

@@ -48,7 +48,11 @@ export class LoginPage implements OnInit {
         this.alertServe.presentToast(res?.data?.message);
         if (res?.errorNode?.errorCode == 0 && res?.data?.success) {
           form.resetForm();
-          this.router.navigateByUrl('/home');
+          if(res?.data?.details?.role == 'admin'){
+            this.router.navigateByUrl('/dashboard');
+          }else{
+            this.router.navigateByUrl('/home');
+          }
         }
       },
       (err) => {

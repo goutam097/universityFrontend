@@ -61,54 +61,38 @@ export class ContactUsPage implements OnInit {
   async ionViewWillEnter() {
     this.baseurl =this.StorageService.domaneName
     console.log(this.baseurl);
-    this.getAboutdetails();
+    // this.getAboutdetails();
     }
 
  
 
-  async getAboutdetails() {
-    await this.dataServer.getMethod("contact-us/list/"+this.baseurl).then(async data => {
-      var res = JSON.parse(JSON.stringify(data));
-      console.log(res,"For our aboutdetails")
-      if(res.statusCode==0){
-        this.details =res.details[0];
-        this.address=this.details.address;
-        this.city=this.details.city;
-        this.state=this.details.state;
-        this.zip_code=this.details.zip_code;
-        this.latitude=this.details.latitude;
-        this.longitude=this.details.longitude;
-      }
-    }, err => {
-      this.alertServe.presentToast(err);
-    });
-  }
 
-  contactForm(form:NgForm){
-    if (form.invalid)
-    return;
-  else {
-    let jData = {
-      "full_name": this.name,
-      "email_id": this.email,
-      "contact_number": this.phoneNumber,
-      "subject": this.subject,
-      "message": this.message,
-    }
-    console.log(jData);
-     this.dataServer.postMethod(jData,"admin/contactenquiry/create").then(async (data: any) => {
-      var res = JSON.parse(JSON.stringify(data));
-      console.log(res);
-      if (res.errorCode == 0) {
-        this.alertServe.presentToast("Submit successfully");
-        let detailsInformatiom = res.details;
-        window.location.reload();
-        } 
-    }, err => {
-      this.alertServe.presentToast(err);
-    });
-  }
-  }
+
+  // contactForm(form:NgForm){
+  //   if (form.invalid)
+  //   return;
+  // else {
+  //   let jData = {
+  //     "full_name": this.name,
+  //     "email_id": this.email,
+  //     "contact_number": this.phoneNumber,
+  //     "subject": this.subject,
+  //     "message": this.message,
+  //   }
+  //   console.log(jData);
+  //    this.dataServer.postMethod(jData,"admin/contactenquiry/create").then(async (data: any) => {
+  //     var res = JSON.parse(JSON.stringify(data));
+  //     console.log(res);
+  //     if (res.errorCode == 0) {
+  //       this.alertServe.presentToast("Submit successfully");
+  //       let detailsInformatiom = res.details;
+  //       window.location.reload();
+  //       } 
+  //   }, err => {
+  //     this.alertServe.presentToast(err);
+  //   });
+  // }
+  // }
 }
 
 
