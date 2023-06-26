@@ -1,0 +1,39 @@
+<ion-content>
+  <!-- #login="ngForm" (ngSubmit)="submitLogin(login)" -->
+  <form #master="ngForm" (ngSubmit)="submitForm(master)">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">select type</ion-label>
+        <ion-select class="form_input" [interfaceOptions]="{cssClass: 'form_select_list'}" interface="popover"
+        placeholder="Select" name="rank" [(ngModel)]="rank" required  readonly>
+        <ion-select-option *ngFor="let r of masterList"
+          [value]="r.slug">{{r.slug}}</ion-select-option>
+      </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-col size-lg="12" size-md="12" size-sm="12" size-xs="12">
+          <div class="fieldrow">
+            <label class="form_label">Profile Image</label>
+            <div class="up_img">
+              <ul>
+                <li class="up_input">
+                  <input type="file" required accept="image/jpg,image/jpeg,image/png"
+                    (change)="yourImage($event.target,'image')" />
+                  <ion-icon class="up_button" name="cloud-upload-outline"></ion-icon>
+
+                </li>
+                <li *ngIf="logo">
+                  <img src="{{logo}}" alt="">
+                  <button class="btn_delete">
+                    <ion-icon name="close" (click)="clearInvoiceImage()"></ion-icon>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </ion-col>
+      </ion-item>
+    </ion-list>
+    <ion-button expand="full" type="submit">Submit</ion-button>
+  </form>
+</ion-content>

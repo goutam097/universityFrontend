@@ -4,17 +4,18 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent} from './footer/footer.component'
+import { DashboardHeaderComponent } from './dashboard-header/dashboard-header.component';
 
 
 
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent],
+  declarations: [HeaderComponent, FooterComponent,DashboardHeaderComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     CommonModule, RouterModule, ReactiveFormsModule, FormsModule
   ],
-  exports: [HeaderComponent, FooterComponent],
-  entryComponents: [HeaderComponent, FooterComponent]
+  exports: [HeaderComponent, FooterComponent,DashboardHeaderComponent],
+  entryComponents: [HeaderComponent, FooterComponent,DashboardHeaderComponent]
 })
 export class ComponentsModule { }

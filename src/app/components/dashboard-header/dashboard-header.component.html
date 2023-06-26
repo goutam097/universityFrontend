@@ -1,86 +1,47 @@
-<nav
-class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-light"
->
-<div class="navbar-wrapper">
-  <div class="navbar-container content">
-    <div class="collapse navbar-collapse show" id="navbar-mobile">
-      <ul class="nav navbar-nav mr-auto float-left">
-        <li class="nav-item d-block d-md-none">
-          <a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"
-            ><i class="ft-menu"></i
-          ></a>
-        </li>
-        <li class="nav-item d-none d-md-block">
-          <a class="nav-link nav-link-expand" data-action="expand"
-            ><i class="ficon ft-maximize"></i
-          ></a>
-        </li>
-        <li class="nav-item dropdown navbar-search">
-          <a
-            class="nav-link dropdown-toggle hide"
-            data-toggle="dropdown"
-            href="#"
-            ><i class="ficon ft-search"></i
-          ></a>
-          <ul class="dropdown-menu">
-            <li class="arrow_box">
-              <form>
-                <div class="input-group search-box">
-                  <div
-                    class="position-relative has-icon-right full-width"
-                  >
-                    <input
-                      class="form-control"
-                      id="search"
-                      type="text"
-                      placeholder="Search here..."
-                    />
-                    <div
-                      class="form-control-position navbar-search-close"
-                    >
-                      <i class="ft-x"> </i>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav float-right">
-        <li class="dropdown dropdown-user nav-item">
-          <a
-            class="dropdown-toggle nav-link dropdown-user-link"
-            href="#"
-            data-toggle="dropdown"
-            ><span class="avatar avatar-online"
-              ><img
-                src="/assets/images/user.png"
-                alt="avatar" /><i></i></span
-          ></a>
-          <div class="dropdown-menu dropdown-menu-right">
-            <div class="arrow_box_right">
-              <a class="dropdown-item" href="#"
-                ><span class="avatar avatar-online"
-                  ><img src="/assets/images/user.png" alt="avatar" /><span
-                    class="user-name text-bold-700 ml-1"
-                    ><%= username %></span
-                  ></span
-                ></a
-              >
-              <div class="dropdown-divider"></div>
-              <% if(userpermission.includes('User')){ %>
-              <a class="dropdown-item" href="/admin/user/list"><i class="ft-user"></i> Users</a>
-                <div class="dropdown-divider"></div>
-              <% } %>
-              <a class="dropdown-item" href="/auth/logout"
-                ><i class="ft-power"></i> Logout</a
-              >
-            </div>
+
+
+  
+  <!--HEADER START-->
+  <header id="header_2">
+      <!--kode navigation start-->
+      <div class="kode_navigation">
+          <div id="mobile-header">
+              <a id="responsive-menu-button" href="#sidr-main"><i class="fa fa-bars"></i></a>
           </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-</nav>
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-2">
+                      <div class="logo_wrap">
+                          <a href="#"><img src="../../assets/extra-images/logo_2.png" alt=""></a>
+                      </div>
+                  </div>
+                  <div class="col-md-10">
+                      <!--kode nav_2 start-->
+                      <div class="nav_2" id="navigation">
+                          <ul>
+                              <li><a [routerLink]="'/dashboard'">Dashboard</a></li>
+                              <li><a [routerLink]="'/banner-list'">Banner</a></li>
+                              <li><a [routerLink]="'/about-us'">About Us</a></li>
+                              <li><a [routerLink]="'/event-list'">Event</a>
+                              </li>
+                              <li><a [routerLink]="'/blog-list'">Blog</a>
+                              </li>
+                              <li><a [routerLink]="'/course-list'">Course</a>
+                              </li>
+                              <li><a [routerLink]="'/teachers-list'">Teacher</a>
+                              </li>
+                              <li><a [routerLink]="'/gallery'">Gallery</a>
+                              </li>
+                              <li><a [routerLink]="'/contact-us'">Contact US</a>
+                              </li>
+                              <!-- <li><a id="simple-menu" href="#sidr"><i class="fa fa-bars"></i></a></li>  -->
+                          </ul>
+                      </div>
+                      <!--kode nav_2 end-->
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!--kode navigation end-->
+  </header>
+  <!--HEADER END-->

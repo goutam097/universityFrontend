@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { BannerListPageRoutingModule } from './banner-list-routing.module';
+import { MasterCatagoryListPageRoutingModule } from './master-catagory-list-routing.module';
 
-import { BannerListPage } from './banner-list.page';
+import { MasterCatagoryListPage } from './master-catagory-list.page';
 import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { ComponentsModule } from 'src/app/components/components.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    BannerListPageRoutingModule,
+    MasterCatagoryListPageRoutingModule,
     ComponentsModule
   ],
-  declarations: [BannerListPage]
+  declarations: [MasterCatagoryListPage]
 })
-export class BannerListPageModule {}
+export class MasterCatagoryListPageModule {}

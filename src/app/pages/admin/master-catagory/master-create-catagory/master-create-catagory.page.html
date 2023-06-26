@@ -1,0 +1,41 @@
+<ion-content>
+  <!-- #login="ngForm" (ngSubmit)="submitLogin(login)" -->
+  <form #master="ngForm" (ngSubmit)="submitForm(master)">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Title</ion-label>
+        <ion-input type="text" [(ngModel)]="title" name="title" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Small Description</ion-label>
+        <ion-input type="text" [(ngModel)]="small_desc" name="small_desc" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <!-- <ion-label position="floating">Image</ion-label>
+        <ion-input type="file" (change)="onFileSelected($event)" accept="image/*" required></ion-input> -->
+        <ion-col size-lg="12" size-md="12" size-sm="12" size-xs="12">
+          <div class="fieldrow">
+            <label class="form_label">Profile Image</label>
+            <div class="up_img">
+              <ul>
+                <li class="up_input">
+                  <input type="file" required accept="image/jpg,image/jpeg,image/png"
+                    (change)="yourImage($event.target,'image')" />
+                  <ion-icon class="up_button" name="cloud-upload-outline"></ion-icon>
+
+                </li>
+                <li *ngIf="logo">
+                  <img src="{{logo}}" alt="">
+                  <button class="btn_delete">
+                    <ion-icon name="close" (click)="clearInvoiceImage()"></ion-icon>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </ion-col>
+      </ion-item>
+    </ion-list>
+    <ion-button expand="full" type="submit">Submit</ion-button>
+  </form>
+</ion-content>

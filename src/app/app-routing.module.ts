@@ -130,6 +130,22 @@ const routes: Routes = [
         (m) => m.RegisterPageModule
       ),
   },
+  {
+    path: 'master-create-catagory',
+    loadChildren: () => import('./pages/admin/master-catagory/master-create-catagory/master-create-catagory.module').then( m => m.MasterCreateCatagoryPageModule)
+  },
+  {
+    path: 'master-catagory-list',
+    loadChildren: () => import('./pages/admin/master-catagory/master-catagory-list/master-catagory-list.module').then( m => m.MasterCatagoryListPageModule)
+  },
+  {
+    path: 'create-sub-catagory',
+    loadChildren: () => import('./pages/admin/subCatagory-master/create-sub-catagory/create-sub-catagory.module').then( m => m.CreateSubCatagoryPageModule)
+  },
+  {
+    path: 'list-sub-catagory',
+    loadChildren: () => import('./pages/admin/subCatagory-master/list-sub-catagory/list-sub-catagory.module').then( m => m.ListSubCatagoryPageModule)
+  },
 ];
 
 @NgModule({
